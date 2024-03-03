@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "417566336425",
+    "project_id": "ryan-ac554",
+    "storage_bucket": "ryan-ac554.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417566336425:android:68ace8b5996668120e10b8",
+        "android_client_info": {
+          "package_name": "com.example.diaryapplicationv2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBajmxRxcWt0V3NTptXwf3zZNXsk3jMEBM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
