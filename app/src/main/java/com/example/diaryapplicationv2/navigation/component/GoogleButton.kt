@@ -40,7 +40,7 @@ fun GoogleLogo(
     modifier: Modifier = Modifier,
     loadingState:Boolean = false,
     primaryText: String = "Sign in",
-    secondaryText: String = "Wait",
+    secondaryText: String = "Sign in with Google Authentication",
     icon: Int = R.drawable.logo,
     shape: Shape = Shapes().extraSmall,
     borderColor: Color = MaterialTheme.colorScheme.surfaceVariant,

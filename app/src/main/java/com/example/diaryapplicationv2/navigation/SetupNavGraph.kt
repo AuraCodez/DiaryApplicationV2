@@ -13,16 +13,15 @@ import com.example.diaryapplicationv2.navigation.screens.authentication.AuthScre
 fun SetupNavGraph(navController: NavHostController) {
     NavHost(navController = navController, startDestination = ApplicationScreen.Authentication.route) {
         composable(route = ApplicationScreen.Authentication.route) {
-
-        }
-
-        composable(route = ApplicationScreen.Home.route) {
             AuthScreen(
                 loadingState = false,
                 onButtonClicked = {
-
                 }
             )
+        }
+
+        composable(route = ApplicationScreen.Home.route) {
+
         }
 
         composable(
