@@ -1,6 +1,7 @@
 package com.example.diaryapplicationv2.navigation.screens.authentication
 
 import android.annotation.SuppressLint
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,15 +21,29 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import com.example.diaryapplicationv2.R
+import com.example.diaryapplicationv2.constants.Constant.CLIENT_ID
 import com.example.diaryapplicationv2.navigation.component.GoogleLogo
+import com.stevdzasan.onetap.OneTapSignInState
+import com.stevdzasan.onetap.OneTapSignInWithGoogle
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun AuthScreen(loadingState: Boolean,
+               oneTapState: OneTapSignInState,
                onButtonClicked: () -> Unit) {
     Scaffold(
         content = {
             AuthContent(loadingState, onButtonClicked)
+        }
+    )
+    OneTapSignInWithGoogle(
+        state = oneTapState,
+        clientId = CLIENT_ID,
+        onTokenIdReceived = {tokenId ->
+                            Log.d("AuthStuff", tokenId)
+        },
+        onDialogDismissed = {message ->
+            Log.d("AuthStuff", message)
         }
     )
 }

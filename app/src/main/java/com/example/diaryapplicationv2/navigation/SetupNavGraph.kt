@@ -8,14 +8,19 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.example.diaryapplicationv2.constants.Constant.WRITE_SCREEN_PARAM_KEY
 import com.example.diaryapplicationv2.navigation.screens.authentication.AuthScreen
+import com.stevdzasan.onetap.rememberOneTapSignInState
 
 @Composable
 fun SetupNavGraph(navController: NavHostController) {
     NavHost(navController = navController, startDestination = ApplicationScreen.Authentication.route) {
         composable(route = ApplicationScreen.Authentication.route) {
+            val oneTapState = rememberOneTapSignInState()
+
             AuthScreen(
-                loadingState = false,
+                oneTapState = oneTapState,
+                loadingState = oneTapState.opened,
                 onButtonClicked = {
+                    oneTapState.open()
                 }
             )
         }
